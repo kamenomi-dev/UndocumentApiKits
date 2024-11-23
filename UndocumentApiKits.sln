@@ -4,12 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UndocumentApiKit.Window", "UndocumentApiKit.Window\UndocumentApiKit.Window.vcxproj", "{C008B65B-DBB9-46D9-BB42-35161C2A1B64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11F516FF-B94E-41B2-ACBB-33975192542B} = {11F516FF-B94E-41B2-ACBB-33975192542B}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibraryConsoleDebugger", "LibraryConsoleDebugger\LibraryConsoleDebugger.vcxproj", "{EC546A26-2DDC-4D51-B938-9989DD756D63}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibraryWindowDebugger", "LibraryWindowDebugger\LibraryWindowDebugger.vcxproj", "{9E16FCC9-BD89-4495-BB53-2482868EE8E2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{11F516FF-B94E-41B2-ACBB-33975192542B} = {11F516FF-B94E-41B2-ACBB-33975192542B}
+		{C008B65B-DBB9-46D9-BB42-35161C2A1B64} = {C008B65B-DBB9-46D9-BB42-35161C2A1B64}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UndocumentApiKit.System", "UndocumentApiKit.System\UndocumentApiKit.System.vcxproj", "{11F516FF-B94E-41B2-ACBB-33975192542B}"

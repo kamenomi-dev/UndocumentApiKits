@@ -21,6 +21,12 @@
     <ClInclude Include="window.style.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="user32.interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dwmapi.interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

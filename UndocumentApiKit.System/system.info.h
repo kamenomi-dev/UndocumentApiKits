@@ -13,7 +13,8 @@ API_EXPORT typedef struct __structVersionInformation {
   unsigned __int16 dwBuildNumber;
 } VerInfo;
 
-API_EXPORT BOOL KsiSiGetSystemVersion(_Out_ VerInfo* verInfo);
-API_EXPORT BOOL KsiIsWithinVersionRange(_In_ UINT verBegin, _In_ UINT verEnd);
+API_EXPORT BOOL KsiGetSystemVersion(_Out_ VerInfo* verInfo);
+API_EXPORT BOOL KsiIsWithinVersionRange(_In_ VerInfo verBegin,
+                                        _In_ VerInfo verEnd);
 
 #endif  // !__UTILS_SYSTEM_H__

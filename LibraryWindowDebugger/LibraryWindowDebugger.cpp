@@ -1,12 +1,6 @@
 ﻿#include "LibraryWindowDebugger.h"
 
-struct verInfo {
-  UINT32 a;
-  UINT32 b;
-  UINT16 c;
-};
-
-using fnKsiGetSystemVersionType = BOOL (__stdcall *)(verInfo*);
+using fnFoo = BOOL (__stdcall *)(int,int);
 
 using std::exception;
 
@@ -15,9 +9,12 @@ void DebuggerBlock(HINSTANCE hInstance, int period) {
     return;
   }
 
-  HMODULE hLibrary = LoadLibraryW(L"UndocumentApiKit.System.dll");
+  auto libLastStatus = GetLastError();
 
-  if (GetLastError() != ERROR_SUCCESS) {
+  HMODULE hLibrary = LoadLibraryW(L"UndocumentApiKit.Window.Debug.x64.dll");
+
+  libLastStatus = GetLastError();
+  if (libLastStatus != ERROR_SUCCESS) {
     throw new exception("Error! Your library could not be loaded! ");
   }
 
@@ -25,9 +22,8 @@ void DebuggerBlock(HINSTANCE hInstance, int period) {
   * Edit you code here.
   */
 
-  verInfo obj{};
-  auto pFn = (fnKsiGetSystemVersionType)GetProcAddress(hLibrary, "KsiGetSystemVersion");
-  pFn(&obj);
+  auto pFn = (fnFoo)GetProcAddress(hLibrary, "KwsSetWindowLayeredStyle");
+  auto ret = pFn(263334, 2);
 
   FreeLibrary(hLibrary);
   hLibrary = NULL;
